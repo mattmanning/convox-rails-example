@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: .
-    command: bin/rails server -p $$PORT -e $$RAILS_ENV
+    command: bin/rails server -b 0.0.0.0 -p $$PORT -e $$RAILS_ENV
     environment:
     - PORT=4001
     - SECRET_KEY_BASE=d43dd47a1cfc640ca39ab94dd882822ef32d6f0b1c1abe7361832a71512fa5298a006df8346b4f81a89311bd3fcd88be2125570686779719eda3face16296e7f
