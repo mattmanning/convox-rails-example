@@ -1,0 +1,17 @@
+version: "2"
+services:
+  web:
+    build:
+      context: .
+    command: bin/rails server -p $$PORT -e $$RAILS_ENV
+    environment:
+    - PORT=4001
+    - SECRET_KEY_BASE=d43dd47a1cfc640ca39ab94dd882822ef32d6f0b1c1abe7361832a71512fa5298a006df8346b4f81a89311bd3fcd88be2125570686779719eda3face16296e7f
+    - RAILS_SERVE_STATIC_FILES=enabled
+    - RAILS_LOG_TO_STDOUT=enabled
+    - LANG=en_US.UTF-8
+    - RAILS_ENV=production
+    - RACK_ENV=production
+    ports:
+    - 80:4001/tcp
+    - 443:4001/tcp
